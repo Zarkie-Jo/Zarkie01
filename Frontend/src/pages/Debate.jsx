@@ -11,7 +11,7 @@ const DebateList = () => {
 
   const fetchDebates = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/debates/`, {
+      const response = await axios.get(`http://localhost:5000/api/debates`, {
         params: filters,
       });
       setDebates(response.data.debates);
