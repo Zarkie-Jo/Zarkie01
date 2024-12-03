@@ -33,7 +33,7 @@ const Navbar = () => {
                 About
               </Link>
               <Link
-                to="/contact"
+                to="/ContactForm"
                 className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md"
               >
                 Contact

@@ -1,7 +1,6 @@
 ////////////////////////////////////////////
 import React, { useState } from "react";
-import Header from "../components/Navbar";
-import Footer from "../components/Footer";
+// import Header from "../components/Navbar";
 import {
   Phone,
   Printer,
@@ -94,8 +93,8 @@ const ContactForm = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <Header handleDarkMode={toggleDarkMode} darkMode={darkMode} />
-      <div className="bg-gray-100 dark:bg-gray-800 pt-24 px-5 md:px-16">
+      {/* <Header handleDarkMode={toggleDarkMode} darkMode={darkMode} /> */}
+      <div className="bg-gray-100 dark:bg-gray-800 pt-10 px-5 md:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row gap-6 font-arabic">
             {/* Left Column */}
@@ -113,7 +112,7 @@ const ContactForm = () => {
                   <Printer size={20} />
                 </div>
                 <div className="flex items-center justify-end gap-2">
-                  <span>Info@Ev-Servics.jo</span>
+                  <span>Info@Zarkie.jo</span>
                   <Mail size={20} />
                 </div>
               </div>
@@ -262,7 +261,6 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

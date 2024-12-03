@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">EV SERVICE</h3>
+            <h3 className="text-xl font-bold mb-4">Zarkie</h3>
             <p className="text-gray-300">
               Your trusted partner for electric vehicle services and solutions.
             </p>
@@ -40,7 +40,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-gray-300">EV Charging</li>
+              <li className="text-gray-300">Zarkie</li>
               <li className="text-gray-300">Maintenance</li>
               <li className="text-gray-300">Repairs</li>
               <li className="text-gray-300">Consultancy</li>
@@ -51,7 +51,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2">
-              <li className="text-gray-300">Email: info@evservice.com</li>
+              <li className="text-gray-300">Email: info@Zarkie.com</li>
               <li className="text-gray-300">Phone: (123) 456-7890</li>
               <li className="text-gray-300">Address: 123 EV Street, City</li>
             </ul>
@@ -60,7 +60,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © {new Date().getFullYear()} EV SERVICE. All rights reserved.
+            © {new Date().getFullYear()} Zarkie. All rights reserved.
           </p>
         </div>
       </div>
