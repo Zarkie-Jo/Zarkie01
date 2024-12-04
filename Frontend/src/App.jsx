@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Home";
+import ZarqiDebateClubHomepage from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ContactForm from "./ContactForm/ContactForm";
@@ -14,7 +14,7 @@ const App = () => {
         <Navbar />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<ZarqiDebateClubHomepage />} />
             <Route path="/ContactForm" element={<ContactForm />} />
             <Route path="/debates" element={<Debate />} />
             <Route path="/about" element={<About />} />

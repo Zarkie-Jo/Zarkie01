@@ -174,7 +174,7 @@ const About = () => {
         </div>
         <div>
           <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-blue-600 mt-6">
-            50M montly enrichments
+            أكثر من خمسٌ و عشرون مناظرة
           </p>
           <p className="font-normal text-base leading-6 text-blue-600 mt-6">
             It is a long established fact that a reader will be distracted by
