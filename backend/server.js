@@ -18,6 +18,8 @@ const uploadRoutes = require("./routes/uploadRoutes");
 const userRoutes = require("./routes/userRoutes");
 const authMiddleware = require("./middlewares/auth");
 const debatesRoutes = require("./routes/debatesRoutes");
+const memberRoutes = require('./routes/memberRoutes');
+const eventRoutes = require('./routes/eventRoutes');
 
 const app = express();
 
@@ -42,6 +44,8 @@ app.use("/api/contact", contactRoutes);
 app.use("/api/upload", uploadRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/debates", debatesRoutes);
+app.use('/api/members',memberRoutes);
+app.use("/api/events",eventRoutes);
 
 // MongoDB connection
 mongoose
