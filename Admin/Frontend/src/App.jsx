@@ -15,6 +15,7 @@ import Login from "./components/login/Login";
 import { checkAuthStatus } from "./store/authSlice";
 import Reportpage from "./pages/Reportpage";
 import MaintenanceCenterPage from "./pages/MaintenanceCenter";
+import AllDebatesPage from "./pages/AllDebatesPage";
 
 function PrivateRoute({ children }) {
   const { isAuthenticated, isLoading } = useSelector((state) => state.auth);
@@ -140,6 +141,14 @@ function App() {
           element={
             <PrivateRoute>
               <MaintenanceCenterPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/all-debates"
+          element={
+            <PrivateRoute>
+              <AllDebatesPage />
             </PrivateRoute>
           }
         />

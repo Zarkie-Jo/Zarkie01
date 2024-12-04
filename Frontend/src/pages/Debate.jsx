@@ -1,5 +1,52 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { motion } from "framer-motion";
+
+const DebateCard = ({ debate }) => {
+  const videoRef = useRef(null);
+
+  const handleVideoError = (e) => {
+    console.error("Video error:", e);
+  };
+
+  return (
+    <motion.div
+      className="bg-white rounded-lg shadow-md overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <div className="relative h-48">
+        <video
+          ref={videoRef}
+          className="w-full h-full object-cover"
+          controls
+          onError={handleVideoError}
+          preload="metadata"
+        >
+          <source
+            src={`http://localhost:4000${debate.video_path}`}
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div className="p-4">
+        <h3 className="text-xl font-bold mb-2 text-gray-900">{debate.title}</h3>
+        <p className="text-gray-600 mb-4">
+          {debate.description.slice(0, 100)}...
+        </p>
+        <div className="flex justify-between items-center">
+          <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">
+            {debate.category}
+          </span>
+          <span className="text-sm text-gray-500">
+            {new Date(debate.created_at).toLocaleDateString()}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const DebateList = () => {
   const [debates, setDebates] = useState([]);
@@ -8,16 +55,22 @@ const DebateList = () => {
     search: "",
     page: 1,
   });
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const fetchDebates = async () => {
     try {
+      setIsLoading(true);
       const response = await axios.get(`http://localhost:5000/api/debates`, {
         params: filters,
       });
       setDebates(response.data.debates);
-      console.log(response.data.debates);
+      setError("");
     } catch (error) {
       console.error("Error fetching debates:", error);
+      setError("Failed to load debates");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -29,21 +82,26 @@ const DebateList = () => {
     setFilters((prev) => ({ ...prev, category, page: 1 }));
   };
 
+  if (isLoading) return <div className="text-center py-10">Loading...</div>;
+  if (error)
+    return <div className="text-center text-red-500 py-10">{error}</div>;
+
   return (
     <div className="container mx-auto p-4 rtl">
+      {/* Category Filters */}
       <div className="flex justify-between mb-6 flex-wrap gap-4">
         <div className="flex space-x-2 flex-wrap">
           {["", "ثقافي", "اجتماعي", "سياسي"].map((category) => (
             <button
               key={category}
               className={`
-                                px-4 py-2 rounded-md transition-colors duration-200
-                                ${
-                                  filters.category === category
-                                    ? "bg-blue-600 text-white"
-                                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                                }
-                            `}
+                px-4 py-2 rounded-md transition-colors duration-200
+                ${
+                  filters.category === category
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                }
+              `}
               onClick={() => handleCategoryFilter(category)}
             >
               {category || "الكل"}
@@ -51,7 +109,8 @@ const DebateList = () => {
           ))}
         </div>
 
-        <div className="flex items-center space-x-2">
+        {/* Search Input */}
+        <div className="relative">
           <input
             type="text"
             placeholder="البحث في المناظرات"
@@ -65,51 +124,13 @@ const DebateList = () => {
               }))
             }
           />
-          <button className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition-colors">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </button>
         </div>
       </div>
 
+      {/* Debates Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {debates.map((debate) => (
-          <div
-            key={debate._id}
-            className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-          >
-            <div className="p-6">
-              <h2 className="text-xl font-bold mb-2 text-gray-900">
-                {debate.title}
-              </h2>
-              <p className="text-gray-600 mb-4">
-                {debate.description.slice(0, 100)}...
-              </p>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">
-                  {debate.category}
-                </span>
-                <span className="text-sm text-gray-500">
-                  {new Date(debate.created_at).toLocaleDateString()}
-                </span>
-              </div>
-              <button className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors">
-                مشاهدة المناظرة
-              </button>
-            </div>
-          </div>
+          <DebateCard key={debate._id} debate={debate} />
         ))}
       </div>
 
@@ -119,19 +140,25 @@ const DebateList = () => {
           <button
             key={page}
             className={`
-                            px-4 py-2 rounded-md transition-colors duration-200
-                            ${
-                              filters.page === page
-                                ? "bg-blue-600 text-white"
-                                : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                            }
-                        `}
+              px-4 py-2 rounded-md transition-colors duration-200
+              ${
+                filters.page === page
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+              }
+            `}
             onClick={() => setFilters((prev) => ({ ...prev, page }))}
           >
             {page}
           </button>
         ))}
       </div>
+
+      {debates.length === 0 && (
+        <div className="text-center text-gray-500 py-10">
+          لا توجد مناظرات متاحة
+        </div>
+      )}
     </div>
   );
 };
