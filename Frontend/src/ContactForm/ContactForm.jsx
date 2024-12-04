@@ -1,6 +1,4 @@
-////////////////////////////////////////////
 import React, { useState } from "react";
-// import Header from "../components/Navbar";
 import {
   Phone,
   Printer,
@@ -47,13 +45,12 @@ const ContactForm = () => {
       });
       if (response.ok) {
         Swal.fire({
-          title: "Success",
-          text: "The form was successfully submitted!",
+          title: "نجاح",
+          text: "تم إرسال النموذج بنجاح!",
           icon: "success",
-          confirmButtonText: "OK",
-          confirmButtonColor: "#8E1B3B",
+          confirmButtonText: "موافق",
+          confirmButtonColor: "#2563EB",
         }).then(() => {
-          // Clear the form
           setFormData({
             email: "",
             name: "",
@@ -65,21 +62,21 @@ const ContactForm = () => {
         });
       } else {
         Swal.fire({
-          title: "Error",
-          text: "An error occurred while submitting the form.",
+          title: "خطأ",
+          text: "حدث خطأ أثناء إرسال النموذج.",
           icon: "error",
-          confirmButtonText: "OK",
-          confirmButtonColor: "#8E1B3B",
+          confirmButtonText: "موافق",
+          confirmButtonColor: "#2563EB",
         });
       }
     } catch (error) {
       console.error("Error:", error);
       Swal.fire({
-        title: "Error",
-        text: "An error occurred while submitting the form.",
+        title: "خطأ",
+        text: "حدث خطأ أثناء إرسال النموذج.",
         icon: "error",
-        confirmButtonText: "OK",
-        confirmButtonColor: "#8E1B3B",
+        confirmButtonText: "موافق",
+        confirmButtonColor: "#2563EB",
       });
     }
   };
@@ -93,14 +90,13 @@ const ContactForm = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      {/* <Header handleDarkMode={toggleDarkMode} darkMode={darkMode} /> */}
       <div className="bg-gray-100 dark:bg-gray-800 pt-10 px-5 md:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row gap-6 font-arabic">
             {/* Left Column */}
-            <div className="w-full md:w-1/3 bg-[#8E1B3B] text-white p-6 rounded-lg">
+            <div className="w-full md:w-1/3 bg-blue-600 text-white p-6 rounded-lg">
               <h2 className="text-xl font-bold mb-4 text-right border-b pb-2">
-                Contact Addresses
+                عناوين الاتصال
               </h2>
               <div className="space-y-4">
                 <div className="flex items-center justify-end gap-2">
@@ -149,9 +145,7 @@ const ContactForm = () => {
                 </a>
               </div>
               <div className="text-right mt-6">
-                <h3 className="font-bold">
-                  The Hashemite Kingdom of Jordan, Amman
-                </h3>
+                <h3 className="font-bold">المملكة الأردنية الهاشمية، عمان</h3>
               </div>
               <div className="mt-4 bg-white rounded-lg overflow-hidden">
                 <iframe
@@ -178,70 +172,70 @@ const ContactForm = () => {
               <form onSubmit={handleSubmit} className="space-y-2">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="w-full md:w-1/2 flex flex-col items-end">
-                    <label className="mb-1 text-[#8E1B3B] dark:text-white">
-                      *Email
+                    <label className="mb-1 text-blue-600 dark:text-white">
+                      *البريد الإلكتروني
                     </label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full border rounded-md p-2 text-right bg-gray-50 dark:bg-gray-600 dark:text-white"
-                      placeholder="Email"
+                      className="w-full border border-blue-600 rounded-md p-2 text-right bg-gray-50 dark:bg-gray-600 dark:text-white"
+                      placeholder="البريد الإلكتروني"
                     />
                   </div>
                   <div className="w-full md:w-1/2 flex flex-col items-end">
-                    <label className="mb-1 text-[#8E1B3B] dark:text-white">
-                      *Name
+                    <label className="mb-1 text-blue-600 dark:text-white">
+                      *الاسم
                     </label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full border rounded-md p-2 text-right bg-gray-50 dark:bg-gray-600 dark:text-white"
-                      placeholder="Name"
+                      className="w-full border border-blue-600 rounded-md p-2 text-right bg-gray-50 dark:bg-gray-600 dark:text-white"
+                      placeholder="الاسم"
                     />
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="w-full md:w-1/2 flex flex-col items-end">
-                    <label className="mb-1 text-[#8E1B3B] dark:text-white">
-                      National ID
+                    <label className="mb-1 text-blue-600 dark:text-white">
+                      الرقم الوطني
                     </label>
                     <input
                       type="text"
                       name="national_id"
                       value={formData.national_id}
                       onChange={handleInputChange}
-                      className="w-full border rounded-md p-2 text-right bg-gray-50 dark:bg-gray-600 dark:text-white"
-                      placeholder="National ID"
+                      className="w-full border border-blue-600 rounded-md p-2 text-right bg-gray-50 dark:bg-gray-600 dark:text-white"
+                      placeholder="الرقم الوطني"
                     />
                   </div>
                   <div className="w-full md:w-1/2 flex flex-col items-end">
-                    <label className="mb-1 text-[#8E1B3B] dark:text-white">
-                      *Subject
+                    <label className="mb-1 text-blue-600 dark:text-white">
+                      *الموضوع
                     </label>
                     <input
                       type="text"
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full border rounded-md p-2 text-right bg-gray-50 dark:bg-gray-600 dark:text-white"
-                      placeholder="Subject"
+                      className="w-full border border-blue-600 rounded-md p-2 text-right bg-gray-50 dark:bg-gray-600 dark:text-white"
+                      placeholder="الموضوع"
                     />
                   </div>
                 </div>
                 <div className="flex flex-col items-end">
-                  <label className=" text-[#8E1B3B] dark:text-white">
-                    *Message
+                  <label className="text-blue-600 dark:text-white">
+                    *الرسالة
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full border rounded-md p-2 text-right bg-gray-50 dark:bg-gray-600 dark:text-white"
-                    placeholder="Message"
+                    className="w-full border border-blue-600 rounded-md p-2 text-right bg-gray-50 dark:bg-gray-600 dark:text-white"
+                    placeholder="الرسالة"
                     rows="5"
                   />
                 </div>
@@ -252,9 +246,9 @@ const ContactForm = () => {
                 />
                 <button
                   type="submit"
-                  className="w-full bg-[#8E1B3B] text-white py-2 rounded-md hover:bg-[#7c1c2a] transition duration-300"
+                  className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300"
                 >
-                  Send
+                  إرسال
                 </button>
               </form>
             </div>

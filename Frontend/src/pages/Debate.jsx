@@ -110,7 +110,7 @@ const DebateList = () => {
         </div>
 
         {/* Search Input */}
-        <div className="relative">
+        {/* <div className="relative">
           <input
             type="text"
             placeholder="البحث في المناظرات"
@@ -124,7 +124,7 @@ const DebateList = () => {
               }))
             }
           />
-        </div>
+        </div> */}
       </div>
 
       {/* Debates Grid */}
