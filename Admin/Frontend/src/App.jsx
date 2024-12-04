@@ -16,6 +16,8 @@ import { checkAuthStatus } from "./store/authSlice";
 import Reportpage from "./pages/Reportpage";
 import MaintenanceCenterPage from "./pages/MaintenanceCenter";
 import AllDebatesPage from "./pages/AllDebatesPage";
+import CreateEventForm from "../../../Frontend/src/pages/AddEvent";
+import JoinRequestsPage from "./pages/JoinRequestsPage";
 
 function PrivateRoute({ children }) {
   const { isAuthenticated, isLoading } = useSelector((state) => state.auth);
@@ -72,6 +74,16 @@ function App() {
             </PrivateRoute>
           }
         />
+
+        <Route
+          path="/create_event"
+          element={
+            <PrivateRoute>
+              <CreateEventForm />
+            </PrivateRoute>
+          }
+        />
+        {/* ////// */}
         <Route
           path="/Users"
           element={
@@ -149,6 +161,14 @@ function App() {
           element={
             <PrivateRoute>
               <AllDebatesPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/join-requests"
+          element={
+            <PrivateRoute>
+              <JoinRequestsPage />
             </PrivateRoute>
           }
         />

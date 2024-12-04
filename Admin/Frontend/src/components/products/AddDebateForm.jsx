@@ -109,18 +109,19 @@ const AddDebateForm = ({ onDebateAdded }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
+      dir="rtl"
     >
       <h2 className="text-xl font-semibold text-gray-100 mb-6">
-        Add New Debate
+        اضافة مناظرات جديدة{" "}
       </h2>
       {error && <div className="text-red-500 mb-4">{error}</div>}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-gray-300 mb-2">Title</label>
+          <label className="block text-gray-300 mb-2">العنوان</label>
           <input
             type="text"
-            name="title"
+            name="العنوان"
             value={formData.title}
             onChange={handleChange}
             required
@@ -129,9 +130,9 @@ const AddDebateForm = ({ onDebateAdded }) => {
         </div>
 
         <div>
-          <label className="block text-gray-300 mb-2">Description</label>
+          <label className="block text-gray-300 mb-2">الوصف</label>
           <textarea
-            name="description"
+            name="الوصف"
             value={formData.description}
             onChange={handleChange}
             required
@@ -141,9 +142,9 @@ const AddDebateForm = ({ onDebateAdded }) => {
         </div>
 
         <div>
-          <label className="block text-gray-300 mb-2">Category</label>
+          <label className="block text-gray-300 mb-2">الفئة</label>
           <select
-            name="category"
+            name="الفئة"
             value={formData.category}
             onChange={handleChange}
             required
@@ -156,7 +157,7 @@ const AddDebateForm = ({ onDebateAdded }) => {
         </div>
 
         <div>
-          <label className="block text-gray-300 mb-2">Video</label>
+          <label className="block text-gray-300 mb-2">فيديو</label>
           <div className="flex items-center space-x-2">
             <input
               type="file"
@@ -171,9 +172,7 @@ const AddDebateForm = ({ onDebateAdded }) => {
               className="flex items-center space-x-2 bg-gray-700 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-600"
             >
               <Upload size={20} />
-              <span>
-                {formData.video ? formData.video.name : "Choose Video"}
-              </span>
+              <span>{formData.video ? formData.video.name : "اختر فيديو"}</span>
             </label>
           </div>
         </div>
@@ -183,7 +182,7 @@ const AddDebateForm = ({ onDebateAdded }) => {
           disabled={isLoading}
           className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 disabled:bg-blue-300 disabled:cursor-not-allowed"
         >
-          {isLoading ? "Adding..." : "Add Debate"}
+          {isLoading ? "Adding..." : "اضافة المناظرة"}
         </button>
       </form>
     </motion.div>

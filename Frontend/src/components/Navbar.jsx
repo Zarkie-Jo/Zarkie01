@@ -73,10 +73,16 @@ const Navbar = () => {
                 الرئيسية
               </Link>
               <Link
-                to="/services"
+                to="/available_events"
                 className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md"
               >
-                الخدمات
+                انضم الينا{" "}
+              </Link>
+              <Link
+                to="/members"
+                className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md"
+              >
+                فريقـنا{" "}
               </Link>
               <Link
                 to="/about"

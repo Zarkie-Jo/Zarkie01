@@ -23,6 +23,7 @@ const ProductCard = ({ product, onApprove, onDelete }) => {
       className="bg-gray-800 rounded-lg shadow-md overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      dir="rtl"
     >
       <div className="relative h-48">
         <video
@@ -49,32 +50,6 @@ const ProductCard = ({ product, onApprove, onDelete }) => {
         <p className="text-sm text-gray-300 mb-4">{product.description}</p>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <span
-              className={`px-2 py-1 rounded-full text-xs ${
-                product.isApproved
-                  ? "bg-green-500/20 text-green-400"
-                  : "bg-red-500/20 text-red-400"
-              }`}
-            >
-              {product.isApproved ? "Approved" : "Not Approved"}
-            </span>
-            <button
-              onClick={() => onApprove(product._id, !product.isApproved)}
-              className={`p-2 rounded-full ${
-                product.isApproved
-                  ? "hover:bg-red-500/20 text-red-400"
-                  : "hover:bg-green-500/20 text-green-400"
-              }`}
-            >
-              {product.isApproved ? (
-                <XCircle size={20} />
-              ) : (
-                <CheckCircle size={20} />
-              )}
-            </button>
-          </div>
-
           <button
             onClick={() => setIsModalOpen(true)}
             className="p-2 hover:bg-red-500/20 text-red-400 rounded-full"
@@ -236,9 +211,14 @@ const ProductsGrid = () => {
     <div className="space-y-6">
       <AddDebateForm onDebateAdded={fetchProducts} />
 
-      <div className="bg-gray-800 bg-opacity-50 backdrop-blur-md rounded-xl p-6 border border-gray-700">
+      <div
+        className="bg-gray-800 bg-opacity-50 backdrop-blur-md rounded-xl p-6 border border-gray-700"
+        dir="rtl"
+      >
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl font-semibold text-gray-100">All Debates</h2>
+          <h2 className="text-xl font-semibold text-gray-100">
+            جميع المناظرات
+          </h2>
           <div className="relative">
             <input
               type="text"

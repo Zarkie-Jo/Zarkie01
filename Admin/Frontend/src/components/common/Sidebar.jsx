@@ -19,21 +19,25 @@ import {
 import { logout } from "../../store/authSlice"; // Adjust this import path as needed
 
 const SIDEBAR_ITEMS = [
-  { name: "Overview", icon: BarChart2, color: "#6366f1", href: "/" },
-  { name: "Depate", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
-  { name: "Users", icon: User, color: "#EC4899", href: "/users" },
+  { name: "المناظرات", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
+  { name: "إضافة فعالية جديدة", icon: User, color: "#EC4899", href: "/users" },
   {
-    name: "Shop Owner Users",
+    name: "إضافة عضو جديد",
     icon: Users,
     color: "#EC4899",
     href: "/ShopOwner",
   },
-  { name: "Contact", icon: Contact, color: "#10B981", href: "/Contact" },
-  /////
-  { name: "Report", icon: FileText, color: "#10B981", href: "/Report" },
+  { name: "اتصل بنا", icon: Contact, color: "#10B981", href: "/Contact" },
+  {
+    name: "طلبات الانضمام",
+    icon: Users,
+    color: "#10B981",
+    href: "/join-requests",
+  },
 
   /////
-  { name: "Orders", icon: ShoppingCart, color: "#F59E0B", href: "/orders" },
+
+  /////
   // { name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
   // { name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
 ];
@@ -102,7 +106,7 @@ const Sidebar = () => {
                   exit={{ opacity: 0, width: 0 }}
                   transition={{ duration: 0.2, delay: 0.3 }}
                 >
-                  Logout
+                  تسجيل خروج{" "}
                 </motion.span>
               )}
             </AnimatePresence>

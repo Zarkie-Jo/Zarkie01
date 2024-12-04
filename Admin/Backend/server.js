@@ -7,10 +7,14 @@ const path = require("path");
 const fs = require("fs");
 const authRoutes = require("./routes/authRoutes");
 const contactRoutes = require("./routes/contactRoutes");
+const uploadRoute = require("./routes/uploadRoute");
 
 // Import routes
 const productRoutes = require("./routes/ProductRoutes");
 const videoRoutes = require("./routes/videoRoutes");
+const eventRoutes = require("./routes/eventRoutes");
+const memberRoutes = require("./routes/memberRoutes");
+const joinRoutes = require("./routes/joinRequestRoutes");
 
 const app = express();
 
@@ -31,12 +35,17 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Then add your routes
 app.use("/api/contact", contactRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/events", eventRoutes);
+app.use("/api/members", memberRoutes);
+app.use("/api/upload", uploadRoute);
+app.use("/api/join-requests", joinRoutes);
 
 // Debug middleware
 app.use((req, res, next) => {

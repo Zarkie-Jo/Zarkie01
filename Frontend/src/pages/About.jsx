@@ -168,17 +168,17 @@ const About = () => {
             التأسيس
           </p>
           <p className="font-normal text-base leading-6 text-blue-600 mt-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            تأسس نادي مناظرات زاركي في 2022 و هو يعتبر ناديالمناظرات الوحيد في
+            الزرقاء.
           </p>
         </div>
         <div>
           <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-blue-600 mt-6">
-            50M montly enrichments
+            أكثر من خمسٌ و عشرون مناظرة
           </p>
           <p className="font-normal text-base leading-6 text-blue-600 mt-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            يتم تناول المناظرات في جميع نواحي الحياة الأجتماعية و السياسية و
+            الاقتصادية.
           </p>
         </div>
         <div className="sm:block hidden">
@@ -186,8 +186,8 @@ const About = () => {
             أكثر من 1000 متطوع
           </p>
           <p className="font-normal text-base leading-6 text-blue-600 mt-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            لقد ساهم نادي زاركي للمناظرات بنشر الوعي حول أهمية المناظرات لأكثر
+            من ألف عضو منذ أن تم تأسيسه
           </p>
         </div>
       </div>
@@ -240,8 +240,8 @@ const About = () => {
             أكثر من 1000 مستخدم
           </p>
           <p className="font-normal text-base leading-6 text-blue-600 mt-6">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
+            لقد ساهم نادي زاركي للمناظرات بنشر الوعي حول أهمية المناظرات لأكثر
+            من ألف عضو منذ أن تم تأسيسه
           </p>
         </div>
       </div>
@@ -249,25 +249,21 @@ const About = () => {
       <div className="flex lg:flex-row flex-col md:gap-14 gap-16 justify-between lg:mt-20 mt-16">
         <div className="w-full lg:w-6/12">
           <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-blue-600">
-            Our Mission
+            رؤيتنا
           </h2>
-          <p className="font-normal text-base leading-6 text-gray-600 mt-6 w-full lg:w-10/12 xl:w-9/12">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum.In the first place we have granted to God, and
-            by this our present charter confirmed for us and our heirs forever
-            that the English Church shall be free, and shall have her rights
-            entire, and her liberties inviolate; and we will that it be thus
-            observed; which is apparent from
+          <p className="font-bold text-lg leading-6 text-gray-600 mt-6 w-full lg:w-10/12 xl:w-9/12">
+            المناظرة هي نوع من أنواع الحوار بين شخصين ابل أو أكتر في موضوع محدد
+            ووقت محدد ، غا في أي مناظرة يكون هنالك قضية او موضوع جدل ويكون له
+            طرف مؤيد و طرف معارض . - الطرف المؤيد يحاول يثبت رأيه الذي يساند
+            الموضوع والطرف المعارض ينفي أو يفند رأي فريق الموالاة او يدعم معارضو
+            القضية أو الموضوع. في بعض أنواع المناظرات يكون عندها ضوابط تحكمها
+            ويديرها حكم أو هيئة تحكيم
           </p>
-          <p className="font-normal text-base leading-6 text-gray-600 w-full lg:w-10/12 xl:w-9/12 mt-10">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum.In the first place we have granted to God, and
-            by this our present charter confirmed for us and our heirs forever
-            that the English Church shall be free, and shall have her rights
-            entire, and her liberties inviolate; and we will that it be thus
-            observed; which is apparent from
+          <p className="font-bold text-lg leading-6 text-gray-600 w-full lg:w-10/12 xl:w-9/12 mt-10">
+            لذلك نجد ان أهمية وجود هذا النادي تنطلق من البحوث الأكاديمية على
+            مرِّ العقود الأخيرة التي اثبتت أن الفوائد التي تُحْصد نتيجة الانخراط
+            في عملية التناظر لا حصر لها، فالمناظرة تمنح خبرات تفضي إلى مهارات
+            حياتية وشخصية ومعرفية وتنظيمية
           </p>
         </div>
         <div className="w-full lg:w-6/12">
@@ -307,12 +303,10 @@ const About = () => {
                 </svg>
               </div>
               <div className="">
-                <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800">
-                  Team
-                </p>
-                <p className="mt-2 font-normal text-base leading-6 text-gray-600">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
+                <p className="mt-2 font-semibold text-base leading-6 text-gray-600">
+                  عقد مناظرتين في الشهر على الأقل يتناولان التناظر في اهم الأمور
+                  ومختلف المجالات بالإضافة الى مناقشات داخلية لأعضاء النادي
+                  للحديث عن اخر المستجدات
                 </p>
               </div>
             </div>
@@ -358,12 +352,10 @@ const About = () => {
                 </svg>
               </div>
               <div className="">
-                <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800">
-                  Board
-                </p>
-                <p className="mt-2 font-normal text-base leading-6 text-gray-600">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
+                <p className="mt-2 font-semibold text-base leading-6 text-gray-600">
+                  تمكين أعضاء فريق النادي من حضور الاجتماعات الرسمية وغير
+                  الرسمية للاطلاع على اهم واخر التفاصيل واهمها التي تنعقد في
+                  مجلس النواب ولجانه
                 </p>
               </div>
             </div>
@@ -395,12 +387,10 @@ const About = () => {
                 </svg>
               </div>
               <div className="">
-                <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800">
-                  Press
-                </p>
-                <p className="mt-2 font-normal text-base leading-6 text-gray-600">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
+                <p className="mt-2 font-semibold text-base leading-6 text-gray-600">
+                  عقد التدريبات والورشات التي تمكن وتساعد أعضاء النادي للوصول
+                  الى مستوى متقدم من المناظرات وتمكينهم من تقديم بعض التدريبات
+                  لليافعين والأطفال
                 </p>
               </div>
             </div>
