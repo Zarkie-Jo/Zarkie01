@@ -6,6 +6,10 @@ import Footer from "./components/Footer";
 import ContactForm from "./ContactForm/ContactForm";
 import Debate from "./pages/Debate";
 import About from "./pages/About";
+import MembersCards from "./pages/Members";
+import AddMemberForm from "./pages/AddMember";
+import AvailableEvents from "./pages/Events";
+import CreateEventForm from "./pages/AddEvent";
 
 const App = () => {
   return (
@@ -18,6 +22,10 @@ const App = () => {
             <Route path="/ContactForm" element={<ContactForm />} />
             <Route path="/debates" element={<Debate />} />
             <Route path="/about" element={<About />} />
+            <Route path="/members" element={<MembersCards />} />
+            <Route path="/add_member" element={<AddMemberForm />} />
+            <Route path="/available_events" element={<AvailableEvents />} />
+            <Route path="/create_event" element={<CreateEventForm />} />
 
             {/* Add other routes here */}
           </Routes>
