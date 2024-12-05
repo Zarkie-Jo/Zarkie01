@@ -67,7 +67,7 @@ function App() {
           }
         />
         <Route
-          path="/products"
+          path="/Depates"
           element={
             <PrivateRoute>
               <ProductsPage />
@@ -93,7 +93,7 @@ function App() {
           }
         />
         <Route
-          path="/ShopOwner"
+          path="/Adduser"
           element={
             <PrivateRoute>
               <ShopOwnersPage />

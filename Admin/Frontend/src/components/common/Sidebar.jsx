@@ -19,13 +19,13 @@ import {
 import { logout } from "../../store/authSlice"; // Adjust this import path as needed
 
 const SIDEBAR_ITEMS = [
-  { name: "المناظرات", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
+  { name: "المناظرات", icon: ShoppingBag, color: "#8B5CF6", href: "/Depates" },
   { name: "إضافة فعالية جديدة", icon: User, color: "#EC4899", href: "/users" },
   {
     name: "إضافة عضو جديد",
     icon: Users,
     color: "#EC4899",
-    href: "/ShopOwner",
+    href: "/Adduser",
   },
   { name: "اتصل بنا", icon: Contact, color: "#10B981", href: "/Contact" },
   {

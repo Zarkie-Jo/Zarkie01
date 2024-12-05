@@ -23,23 +23,23 @@ const ProductsPage = () => {
   const fetchProductStats = async () => {
     try {
       // Fetch products and orders data in parallel
-      const [productsResponse, ordersResponse] = await Promise.all([
-        axios.get("http://localhost:4000/api/products"),
-        axios.get("http://localhost:4000/api/orders"),
-      ]);
+      // const [productsResponse, ordersResponse] = await Promise.all([
+      //   // axios.get("http://localhost:4000/api/products"),
+      //   // axios.get("http://localhost:4000/api/orders"),
+      // ]);
 
-      const products = productsResponse.data;
-      const orders = ordersResponse.data;
+      // const products = productsResponse.data;
+      // const orders = ordersResponse.data;
 
       // Calculate total products (excluding deleted ones)
-      const totalProducts = products.filter(
-        (product) => !product.isDeletedAdmin
-      ).length;
+      // const totalProducts = products.filter(
+      //   (product) => !product.isDeletedAdmin
+      // ).length;
 
       // Calculate low stock (assuming products with quantity less than 10 are low stock)
-      const lowStock = products.filter(
-        (product) => !product.isDeletedAdmin && product.quantity < 10
-      ).length;
+      // const lowStock = products.filter(
+      //   (product) => !product.isDeletedAdmin && product.quantity < 10
+      // ).length;
 
       // Create a map to track product sales
       const productSales = new Map();
@@ -79,8 +79,9 @@ const ProductsPage = () => {
 
   return (
     <div className="flex-1 overflow-auto relative z-10">
-      <Header title="Products" />
-
+      <div dir="rtl">
+        <Header title="المناظرات" />
+      </div>
       <main className="max-w-7xl mx-auto py-6 px-4 lg:px-8">
         <motion.div
           className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2 mb-8 "
@@ -88,19 +89,19 @@ const ProductsPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <StatCard
+          {/* <StatCard
             name="Total Products"
             icon={Package}
             value={productStats.totalProducts.toString()}
             color="#6366F1"
-          />
+          /> */}
 
-          <StatCard
+          {/* <StatCard
             name="Total Revenue"
             icon={DollarSign}
             value={`$${productStats.totalRevenue.toFixed(2)}`}
             color="#EF4444"
-          />
+          /> */}
         </motion.div>
 
         <ProductsTable onProductsUpdate={fetchProductStats} />
